@@ -1,28 +1,36 @@
 body {
     margin: 0;
+    margin-left: 20px;
+    margin-right: 20px;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #0E1122;
+    color: #fff;
 }
+
+
 .swiper {
     width: 100%;
     height: 550px;
 }
-
 .swiper-slide {
     display: flex;
-    font-size: 24px;
-    color: #fff;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    height: 100%;
-    background: #009688;
+    font-size: 18px;
+    color: #fff;
+    background-color: #009688;
 }
 
-.swiper-slide img {
-    width: 70%;
+.swiper-slide img,.calendrier img {
+    width: 73%;
     height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    object-fit: cover;
+
 }
 
 .barre{
@@ -30,33 +38,81 @@ body {
     height: auto;
     display: flex;
     align-items: center;
-    /* background-color: rgb(80, 37, 37); */
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-around;    
 }
 .contenue{
     width: 10%;
     height: 100px;
     display: flex;
     justify-content: center;
-    background-color: rgb(190, 199, 199);
+    border: none;
     border-radius: 25px;
-
+    flex-direction: column;
+    align-items: center;
 }
-#bar-search{
-    width: 40%;
-    height: 100px;
+
+.contenue img{
+    width: 100%;
+    height: auto;
     display: flex;
-    justify-content: center;
-    background-color: rgb(190, 199, 199);
-    border-radius: 25px;
+    /* display: block; */
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
 }
 
-.barre .contenue{
-    margin: 10px;
-    border: 1px solid black;
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+
+#bar-search {
+    width: 40%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 0 15px;
+    margin: 20px auto;
+    gap: 10px;
 }
+
+#bar-search form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+#bar-search input[type="text"] {
+    width: 90%;
+    height: 70px;
+    border: none;
+    border-radius: 30px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+}
+
+#bar-search button {
+    width: 10%;
+    height: 70px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    cursor: pointer;
+}
+#bar-search button img {
+    width: 30px;
+    height: 30px;
+}
+
+#bar-search button:hover {
+    background-color: #bbbec0;
+}
+
+
+
 
 .calendrier{
     width: 18%;
@@ -111,7 +167,7 @@ body {
     height: auto;
     flex: 0 0 100%;
     display: none;
-    background-color:#ff5757ce;
+    background-color:#C81B51;
     color: white;
     align-content: center;
     text-align: center;
@@ -120,7 +176,7 @@ body {
 }
 
 .carousel-slide:last-child {
-    background-color:#ff5757da;
+    background-color:#4C0C3E;
 }
 .carousel-slide input {
     width: 60%;
@@ -314,6 +370,54 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(190, 199, 199);
+    border-radius: 25px;
+    margin: 10px;
+}
+
+#lecture {
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 50% 20%;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lecture-info {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #4C0C3E;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+
+#navigation {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 20% 20%;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navigation-item {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #C81B51;
     border-radius: 25px;
     margin: 10px;
 }

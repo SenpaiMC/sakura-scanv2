@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="login.css"> -->
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    
-    <title>profil</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
-        <header>
+    <header>
         <div class="barre">
             <div class="contenue"><a href="index.html">Sakura scan</a></div>
             <div id="bar-search">2</div>
@@ -18,29 +22,24 @@
             <div class="contenue"><a href="login.html">Login</a></div>
         </div>
     </header>
-
-    <section id="carousel">
-        <div class="contenue-carrousel">
-            <div class="carousel-slide">
-
-                <!-- Formulaire de connexion -->
-      <h2>Connexion</h2>
-        <form action="" method="POST">
-        <div class="input-groupes">
+<div class="swiper" style="width: 900px; height: 600px; margin: auto; overflow: hidden;">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide" style="background:#f99; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 900px;">                
+        <h2>Connexion</h2>
+        <form action="functions\login.php" method="POST">
+        <div class="input-groupe">
             <!-- Pseudo -->
             <label for="login-username"></label>
             <input type="text" id="login-username" name="nom" placeholder="Pseudo" required>
         </div>
-        <div class="input-groupes" style="margin: auto; width: 65%; height: 50px; background-color: white; border-radius: 5px; align-items: center; display: flex; justify-content: center;">
+        <div class="input-groupe">
             <!-- Mot de passe -->
             <label for="login-password"></label>
-                <input type="password" id="login-password" name="mot_de_passe" placeholder="Mot de passe" required style="outline: none; border: none; width: 100%; padding: 10px; border-radius: 5px;">
+                <input type="password" id="login-password" name="mot_de_passe" placeholder="Mot de passe" required>
                         <img src="eye.png" alt="eye" id="eye" style="cursor:pointer;" onclick="changer()">
                     </div>
-                    <button type="submit">Se coonecter</button>
-        </form>
-                <button id="move" onclick="moveCarousel(1)">Pas de compte ? S'inscrire</button>
-            </div>
                     <script>
                         function changer() {
                             const pwd = document.getElementById("login-password");
@@ -54,23 +53,24 @@
                             }
                         }
                         </script>
-        
-            <!-- Formulaire d'inscription -->
-            <div class="carousel-slide">
-            <h2>Création de compte</h2>
-            <form action="" method="POST" enctype="multipart/form-data">
-                <div class="input-groupes">
+                    <button type="submit">Se connecter</button>
+                </form>
+            </div>
+            <div class="swiper-slide" style="background:#9f9; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <h2>Création de compte</h2>
+            <form action="functions\register.php" method="POST" enctype="multipart/form-data">
+                <div class="input-groupe">
                     <!-- Pseudo -->
                     <label for="register-username"></label>
                     <input type="text" id="register-username" name="nom" placeholder="Pseudo" required>
                 </div>
-                <div class="input-groupes">
+                <div class="input-groupe">
                     <!-- Mot de passe -->
                     <label for="register-password"></label>
                     <input type="mot_de_passe" id="register-password" name="mot_de_passe" placeholder="Mot de passe" required>
                 </div>
                 
-                <div class="input-groupes" >
+                <div class="input-groupe">
                     <!-- Photo de profil -->
                     <label for="photo_profil"></label>
                     <input type="file" id="fileInput" name="photo_profil" onchange="previewImage()" required>
@@ -78,28 +78,14 @@
                 </div>
                 <button type="submit">S'inscrire</button>
             </form>
-            <button id="move" onclick="moveCarousel(-1)">Déjà inscrit ? Se conecter </button>
+            </div>
         </div>
-    </section>
-        
-    <script>
-        // Fonction pour faire défiler le carrousel
-        
-        let currentSlide = 0;
-        
-        const slides = document.querySelectorAll('.carousel-slide');
-        function moveCarousel(direction) {
-            slides[currentSlide].style.display = 'none';
-            currentSlide = (currentSlide + direction + slides.length) % slides.length;
-            slides[currentSlide].style.display = 'block';
-}
 
-// Initialize carousel
-slides.forEach((slide, index) => {
-    slide.style.display = index === 0 ? 'block' : 'none';
-});
-</script>
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 
+</div>
 <script>
     // Fonction pour afficher l'image sélectionnée dans le champ de téléchargement de fichier
     
@@ -127,3 +113,49 @@ slides.forEach((slide, index) => {
         }
     }
     </script>
+
+<script>
+// const swiper = new Swiper('.swiper', {
+//     // Optional parameters
+//     slidesPerView: 2,
+//     spaceBetween: 20,
+//     overflow: 'hidden',
+//     centeredSlides: true,
+//     direction: 'horizontal',
+//     loop: true,
+
+    
+
+//     // Navigation arrows
+//     navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//     },
+
+
+// });
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+})
+
+</script>
+</body>
+</html>
