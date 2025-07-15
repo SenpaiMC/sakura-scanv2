@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="barre">
+            <div class="contenue"><a href="index.html">Sakura scan</a></div>
+            <div id="bar-search">2</div>
+            <div class="contenue"><a href="calendrier.html">Calendrier</a></div>
+            <div class="contenue"><a href="serie.html">serie</a></div>
+            <div class="contenue"><a href="login.html">Login</a></div>
+        </div>
+    </header>
+
+    <section id="espace-admin">
+        <h1>Espace admin</h1>
+        <section id="livres">
+            <h2>Ajouter un livre</h2>
+            <form action="" method="post">
+                <div class="input-groupe">
+                    <label for="titre">Titre</label>
+                    <input type="text" id="titre" name="titre" placeholder="Titre du livre" required>
+                </div>
+                <div class="input-groupe">
+                    <label for="auteur">Auteur</label>
+                    <input type="text" id="auteur" name="auteur" placeholder="Auteur du livre" required>
+                </div>
+                    <div id="multiple-choix">
+                        <div class="choix">
+                            <label for="choix">Choisir un type de livre</label>
+                            <select name="choix" id="choix">
+                                <option value="manga">Manga</option>
+                                <option value="bd">BD</option>
+                                <option value="roman">Roman</option>
+                            </select>
+                        </div>
+                        <div class="choix">
+                            <label for="choix">Choisir un type de livre</label>
+                            <select name="choix" id="choix">
+                                <option value="manga">Manga</option>
+                                <option value="bd">BD</option>
+                                <option value="roman">Roman</option>
+                            </select>
+                        </div>
+                        <div class="choix">
+                            <label for="choix">Choisir un type de livre</label>
+                            <select name="choix" id="choix">
+                                <option value="manga">Manga</option>
+                                <option value="bd">BD</option>
+                                <option value="roman">Roman</option>
+                            </select>
+                        </div>
+                        <div class="choix">
+                            <label for="choix">Choisir un type de livre</label>
+                            <select name="choix" id="choix">
+                                <option value="manga">Manga</option>
+                                <option value="bd">BD</option>
+                                <option value="roman">Roman</option>
+                            </select>
+                        </div>
+                    </div>
+                <div class="input-groupe">
+                    <label for="description">Description</label>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="input-groupe" >
+                    <!-- Photo de profil -->
+                    <label for="photo_profil"></label>
+                    <input type="file" id="fileInput" name="photo_profil" onchange="previewImage()" required>
+                    <div id="vueimage"></div>
+                </div>
+                <button type="submit">Ajouter un livre</button>
+            </form>
+
+        </section>
+        <section id="chapitres">
+            <h2>Ajouter un chapitre</h2>
+            <form action="" method="post">
+                    <div id="multiple-choix">
+                        <div class="choix">
+                            <label for="livre">Livre</label>
+                            <select name="livre" id="livre">
+                                <option value="">Sélectionner un livre</option>
+                                <!-- Options de livres à ajouter ici -->
+                            </select>
+                        </div>
+                    </div>
+
+                <div class="input-groupe">
+                    <label for="titre">Numéro du chapitre</label>
+                    <input type="text" id="" name="" placeholder="Numéro" required>
+                </div>
+                <div class="input-groupe">
+                    <label for="auteur">Chemin d'accées</label>
+                    <input type="text" id="" name="" placeholder="chemin" required>
+                </div>
+                <button type="submit">Ajouter un chapitre</button>
+            </form>
+        </section>
+        <script>
+    // Fonction pour afficher l'image sélectionnée dans le champ de téléchargement de fichier
+    
+    function previewImage() {
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
+        const voirimage = document.getElementById('vueimage');
+        
+        if(file.type.match('image.*')){
+            const reader = new FileReader();
+            
+            reader.addEventListener('load', function (event) {
+                const imageUrl = event.target.result;
+                const image = new Image();
+                
+                image.addEventListener('load', function() {
+                    voirimage.innerHTML = ''; // Vider le conteneur au cas où il y aurait déjà des images.
+                    voirimage.appendChild(image);
+                });
+                
+                image.src = imageUrl;
+            });
+            
+            reader.readAsDataURL(file);
+        }
+    }
+    </script>
+    
+</body>
+</html>

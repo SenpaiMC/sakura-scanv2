@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="login.css"> -->
+    <link rel="stylesheet" href="style.css">
+    
+    <title>profil</title>
+</head>
+<body>
+        <header>
+        <div class="barre">
+            <div class="contenue"><a href="index.html">Sakura scan</a></div>
+            <div id="bar-search">2</div>
+            <div class="contenue"><a href="calendrier.html">Calendrier</a></div>
+            <div class="contenue"><a href="serie.html">serie</a></div>
+            <div class="contenue"><a href="login.html">Login</a></div>
+        </div>
+    </header>
+
+    <section id="carousel">
+        <div class="contenue-carrousel">
+            <div class="carousel-slide">
+
+                <!-- Formulaire de connexion -->
+      <h2>Connexion</h2>
+        <form action="" method="POST">
+        <div class="input-groupes">
+            <!-- Pseudo -->
+            <label for="login-username"></label>
+            <input type="text" id="login-username" name="nom" placeholder="Pseudo" required>
+        </div>
+        <div class="input-groupes" style="margin: auto; width: 65%; height: 50px; background-color: white; border-radius: 5px; align-items: center; display: flex; justify-content: center;">
+            <!-- Mot de passe -->
+            <label for="login-password"></label>
+                <input type="password" id="login-password" name="mot_de_passe" placeholder="Mot de passe" required style="outline: none; border: none; width: 100%; padding: 10px; border-radius: 5px;">
+                        <img src="eye.png" alt="eye" id="eye" style="cursor:pointer;" onclick="changer()">
+                    </div>
+                    <button type="submit">Se coonecter</button>
+        </form>
+                <button id="move" onclick="moveCarousel(1)">Pas de compte ? S'inscrire</button>
+            </div>
+                    <script>
+                        function changer() {
+                            const pwd = document.getElementById("login-password");
+                            const eye = document.getElementById("eye");
+                            if (pwd.type === "password") {
+                                pwd.type = "text";
+                                eye.src = "eyeon.png";
+                            } else {
+                                pwd.type = "password";
+                                eye.src = "eye.png";
+                            }
+                        }
+                        </script>
+        
+            <!-- Formulaire d'inscription -->
+            <div class="carousel-slide">
+            <h2>Création de compte</h2>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div class="input-groupes">
+                    <!-- Pseudo -->
+                    <label for="register-username"></label>
+                    <input type="text" id="register-username" name="nom" placeholder="Pseudo" required>
+                </div>
+                <div class="input-groupes">
+                    <!-- Mot de passe -->
+                    <label for="register-password"></label>
+                    <input type="mot_de_passe" id="register-password" name="mot_de_passe" placeholder="Mot de passe" required>
+                </div>
+                
+                <div class="input-groupes" >
+                    <!-- Photo de profil -->
+                    <label for="photo_profil"></label>
+                    <input type="file" id="fileInput" name="photo_profil" onchange="previewImage()" required>
+                    <div id="vueimage"></div>
+                </div>
+                <button type="submit">S'inscrire</button>
+            </form>
+            <button id="move" onclick="moveCarousel(-1)">Déjà inscrit ? Se conecter </button>
+        </div>
+    </section>
+        
+    <script>
+        // Fonction pour faire défiler le carrousel
+        
+        let currentSlide = 0;
+        
+        const slides = document.querySelectorAll('.carousel-slide');
+        function moveCarousel(direction) {
+            slides[currentSlide].style.display = 'none';
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].style.display = 'block';
+}
+
+// Initialize carousel
+slides.forEach((slide, index) => {
+    slide.style.display = index === 0 ? 'block' : 'none';
+});
+</script>
+
+<script>
+    // Fonction pour afficher l'image sélectionnée dans le champ de téléchargement de fichier
+    
+    function previewImage() {
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
+        const voirimage = document.getElementById('vueimage');
+        
+        if(file.type.match('image.*')){
+            const reader = new FileReader();
+            
+            reader.addEventListener('load', function (event) {
+                const imageUrl = event.target.result;
+                const image = new Image();
+                
+                image.addEventListener('load', function() {
+                    voirimage.innerHTML = ''; // Vider le conteneur au cas où il y aurait déjà des images.
+                    voirimage.appendChild(image);
+                });
+                
+                image.src = imageUrl;
+            });
+            
+            reader.readAsDataURL(file);
+        }
+    }
+    </script>

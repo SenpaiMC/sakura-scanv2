@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="barre">
+            <div class="contenue"><a href="index.html">Sakura scan</a></div>
+            <div id="bar-search">2</div>
+            <div class="contenue"><a href="calendrier.html">Calendrier</a></div>
+            <div class="contenue"><a href="serie.html">serie</a></div>
+            <div class="contenue"><a href="login.html">Login</a></div>
+        </div>
+    </header>
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide" style="background:#f99;"><img src="Omniscient Reader's Viewpoint.jpg" alt=""></div>
+    <div class="swiper-slide" style="background:#9f9;">Slide 2</div>
+    <div class="swiper-slide" style="background:#f9f;">Slide 3</div>
+    <div class="swiper-slide" style="background:#f99;">Slide 4</div>
+    <div class="swiper-slide" style="background:#9f9;">Slide 5</div>
+    <div class="swiper-slide" style="background:#f9f;">Slide 6</div>
+  </div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+</div>
+<br>
+
+<div class="barre">
+    <div class="contenue"><p>Calendrier <br> <br> Aujourd'hui</p></div>  
+</div>
+
+<div class="barre">
+    <div class="calendrier"></div>
+    <div class="calendrier"></div>
+    <div class="calendrier"></div>
+    <div class="calendrier"></div>
+    <div class="calendrier"></div>
+</div>
+<br>
+
+<div class="barre">
+    <div class="contenue"><p>Dernière sortie</p></div>
+</div>
+
+<div id="sortie">
+    <div class="contenue3">
+        <p>Sortie 1</p>
+    </div>
+    <div class="contenue3">
+        <p>Sortie 2</p>
+    </div>
+    <div class="contenue3">
+        <p>Sortie 3</p>
+    </div>
+    <div class="contenue3">
+        <p>Sortie 4</p>
+    </div>
+    <div class="contenue3">
+        <p>Sortie 5</p>
+    </div>
+    <div class="contenue3">
+        <p>Sortie 6</p>
+    </div>
+
+</div>
+
+<br>
+<footer>
+    <div class="barre">
+        <div class="contenue"><p>Sakura scan</p></div>  
+        <div class="contenue"><p>Liste des pages</p></div>  
+        <div class="contenue"><p>Catégorie les plus rechercher</p></div>  
+    </div>
+</footer>
+
+
+
+    <script>
+        
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    slidesPerView: 3,
+    spaceBetween: 20,
+    centeredSlides: true,
+    direction: 'horizontal',
+    loop: true,
+    // Make the centered (active) slide scale up, others scale down
+    on: {
+        slideChangeTransitionStart: function () {
+            this.slides.forEach(slide => slide.style.transform = "scale(0.75)");
+            if (this.slides[this.activeIndex]) {
+                this.slides[this.activeIndex].style.transform = "scale(1)";
+                this.slides[this.activeIndex].style.transition = "transform 0.7s";
+            }
+        },
+        init: function () {
+            this.slides.forEach(slide => slide.style.transform = "scale(0.75)");
+            if (this.slides[this.activeIndex]) {
+                this.slides[this.activeIndex].style.transform = "scale(1.0)";
+                this.slides[this.activeIndex].style.transition = "transform 0.7s";
+            }
+        }
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+
+});
+
+// Optional: Auto-slide every 7 seconds using Swiper API
+setInterval(() => {
+    swiper.slideNext();
+}, 10000);
+
+</script>
+</body>
+</html>
