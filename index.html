@@ -13,30 +13,29 @@
 </head>
 <body>
     <header>
-        <div class="barre">
-            <div class="contenue"><a href="index.html"><img src="icons\sakura.png" alt="sakura-scan"></a></div>
+            <div class="header"><a href="index.html"><img src="icons\sakura.png" alt="sakura-scan"></a></div>
             <div id="bar-search">
                     <form action="" method="post">
                     <input type="text" placeholder="Rechercher..." name="search">
                     <button type="submit"><img src="icons\search.png" alt="Rechercher"></button>
                 </form>
         </div>
-            <div class="contenue"><a href="calendrier.html"><img src="icons\Calendar.png" alt=""></a></div>
-            <div class="contenue"><a href="serie.html"><img src="icons\Serie.png" alt=""></a></div>
-            <div class="contenue"><a href="login.html"><img src="icons\User.png" alt=""></a></div>
-        </div>
+            <div class="header"><a href="calendrier.html"><img src="icons\Calendar.png" alt=""></a></div>
+            <div class="header"><a href="serie.html"><img src="icons\Serie.png" alt=""></a></div>
+            <div class="header"><a href="login.html"><img src="icons\User.png" alt=""></a></div>
     </header>
+
 <!-- Slider main container -->
 <div class="swiper">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
-    <div class="swiper-slide" style="background:#f99;"><img src="Omniscient Reader's Viewpoint.jpg" alt=""></div>
-    <div class="swiper-slide" style="background:#9f9;">Slide 2</div>
-    <div class="swiper-slide" style="background:#f9f;">Slide 3</div>
-    <div class="swiper-slide" style="background:#f99;">Slide 4</div>
-    <div class="swiper-slide" style="background:#9f9;">Slide 5</div>
-    <div class="swiper-slide" style="background:#f9f;">Slide 6</div>
+    <div class="swiper-slide"><img src="Omniscient Reader's Viewpoint.jpg" alt=""><p>Omniscient Reader's Viewpoint</p></div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+    <div class="swiper-slide">Slide 4</div>
+    <div class="swiper-slide">Slide 5</div>
+    <div class="swiper-slide">Slide 6</div>
   </div>
 
   <!-- If we need navigation buttons -->
@@ -51,7 +50,7 @@
 </div>
 
 <div class="barre">
-    <div class="calendrier"><img src="Omniscient Reader's Viewpoint.jpg" alt=""></div>
+    <div class="calendrier"><img src="Omniscient Reader's Viewpoint.jpg" alt=""> <br><p>Omniscient Reader's Viewpoint</p></div>
     <div class="calendrier"></div>
     <div class="calendrier"></div>
     <div class="calendrier"></div>
@@ -87,11 +86,17 @@
 
 <br>
 <footer>
-    <div class="barre">
-        <div class="contenue"><p>Sakura scan</p></div>  
-        <div class="contenue"><p>Liste des pages</p></div>  
-        <div class="contenue"><p>Catégorie les plus rechercher</p></div>  
-    </div>
+        <div class="footer"><img src="icons\sakura.png" alt=""><h4>© 2025 Sakura Scan. Tous droits réservés.</h4></div>  
+        <div class="footer">
+            <h4>Liste des pages</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="calendrier.html">Calendrier</a></li>
+                <li><a href="serie.html">Séries</a></li>
+                <li><a href="login.html">Connexion</a></li>
+            </ul>
+        </div> 
+        <div class="footer"><h4>Catégorie les plus rechercher</h4></div>  
 </footer>
 
 
@@ -133,9 +138,9 @@ const swiper = new Swiper('.swiper', {
 });
 
 // Optional: Auto-slide every 7 seconds using Swiper API
-setInterval(() => {
-    swiper.slideNext();
-}, 10000);
+// setInterval(() => {
+//     swiper.slideNext();
+// }, 10000);
 
 </script>
 </body>
