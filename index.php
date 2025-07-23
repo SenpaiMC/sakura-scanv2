@@ -4,26 +4,12 @@
     <meta charset="UTF-8">
     <title>Accueil</title>
     <link rel="stylesheet" href="style.css">
-    <link
-    rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
-    <header>
-            <div class="header"><a href="index.html"><img src="icons\sakura.png" alt="sakura-scan"></a></div>
-            <div id="bar-search">
-                    <form action="" method="post">
-                    <input type="text" placeholder="Rechercher..." name="search">
-                    <button type="submit"><img src="icons\search.png" alt="Rechercher"></button>
-                </form>
-        </div>
-            <div class="header"><a href="calendrier.html"><img src="icons\Calendar.png" alt=""></a></div>
-            <div class="header"><a href="serie.html"><img src="icons\Serie.png" alt=""></a></div>
-            <div class="header"><a href="login.html"><img src="icons\User.png" alt=""></a></div>
-    </header>
+    <?php include 'includes/header.php'; ?>
 
 <!-- Slider main container -->
 <div class="swiper">
@@ -58,6 +44,10 @@
 </div>
 <br>
 
+<section>
+    <button>Dernière sortie</button>
+</section>
+
 <div class="barre">
     <div class="contenue"><p>Dernière sortie</p></div>
 </div>
@@ -84,20 +74,7 @@
 
 </div>
 
-<br>
-<footer>
-        <div class="footer"><img src="icons\sakura.png" alt=""><h4>© 2025 Sakura Scan. Tous droits réservés.</h4></div>  
-        <div class="footer">
-            <h4>Liste des pages</h4>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="calendrier.html">Calendrier</a></li>
-                <li><a href="serie.html">Séries</a></li>
-                <li><a href="login.html">Connexion</a></li>
-            </ul>
-        </div> 
-        <div class="footer"><h4>Catégorie les plus rechercher</h4></div>  
-</footer>
+<?php include 'includes/footer.php'; ?>
 
 
 
@@ -128,7 +105,7 @@ const swiper = new Swiper('.swiper', {
         }
     },
 
-    // Navigation arrows
+//  Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -138,9 +115,9 @@ const swiper = new Swiper('.swiper', {
 });
 
 // Optional: Auto-slide every 7 seconds using Swiper API
-// setInterval(() => {
-//     swiper.slideNext();
-// }, 10000);
+ setInterval(() => {
+    swiper.slideNext();
+ }, 7000);
 
 </script>
 </body>

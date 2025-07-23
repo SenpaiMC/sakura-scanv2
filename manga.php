@@ -7,13 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-            <div class="contenue"><a href="index.html">Sakura scan</a></div>
-            <div id="bar-search">2</div>
-            <div class="contenue"><a href="calendrier.html">Calendrier</a></div>
-            <div class="contenue"><a href="serie.html">serie</a></div>
-            <div class="contenue"><a href="login.html">Login</a></div>
-    </header>
+    <?php include 'includes/header.php'; ?>
 
     <section id="presentation">
         <div id="" class="groupes"><img src="" alt="cover"></div>
@@ -42,6 +36,7 @@
     </div>
 
 </div>
-    
+
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>

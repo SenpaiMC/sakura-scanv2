@@ -8,18 +8,7 @@
     <title>profil</title>
 </head>
 <body>
-    <header>
-            <div class="contenue"><a href="index.html"><img src="icons\sakura.png" alt="sakura-scan"></a></div>
-            <div id="bar-search">
-                    <form action="" method="post">
-                    <input type="text" placeholder="Rechercher..." name="search">
-                    <button type="submit"><img src="icons\search.png" alt="Rechercher"></button>
-                </form>
-        </div>
-            <div class="contenue"><a href="calendrier.html"><img src="icons\Calendar.png" alt=""></a></div>
-            <div class="contenue"><a href="serie.html"><img src="icons\Serie.png" alt=""></a></div>
-            <div class="contenue"><a href="login.html"><img src="icons\User.png" alt=""></a></div>
-    </header>
+    <?php include 'includes/header.php'; ?>
 
     <section id="carousel">
         <div class="contenue-carrousel">
@@ -27,7 +16,7 @@
 
                 <!-- Formulaire de connexion -->
       <h2>Connexion</h2>
-        <form action="" method="POST">
+        <form action="functions\login.php" method="POST">
         <div class="input-groupes">
             <!-- Pseudo -->
             <label for="login-username"></label>
@@ -37,7 +26,7 @@
             <!-- Mot de passe -->
             <label for="login-password"></label>
                 <input type="password" id="login-password" name="mot_de_passe" placeholder="Mot de passe" required style="outline: none; border: none; width: 100%; padding: 10px; border-radius: 5px;">
-                        <img src="eye.png" alt="eye" id="eye" style="cursor:pointer;" onclick="changer()">
+                        <img src="assets\icons\eye.png" alt="eye" id="eye" style="cursor:pointer;" onclick="changer()">
                     </div>
                     <button type="submit">Se coonecter</button>
         </form>
@@ -49,10 +38,10 @@
                             const eye = document.getElementById("eye");
                             if (pwd.type === "password") {
                                 pwd.type = "text";
-                                eye.src = "eyeon.png";
+                                eye.src = "assets\icons\eyeon.png";
                             } else {
                                 pwd.type = "password";
-                                eye.src = "eye.png";
+                                eye.src = "assets\icons\eye.png";
                             }
                         }
                         </script>
@@ -60,7 +49,7 @@
             <!-- Formulaire d'inscription -->
             <div class="carousel-slide">
             <h2>Création de compte</h2>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="functions\register.php" method="POST" enctype="multipart/form-data">
                 <div class="input-groupes">
                     <!-- Pseudo -->
                     <label for="register-username"></label>
@@ -84,7 +73,7 @@
         </div>
     </section>
         
-    <script>
+<script>
         // Fonction pour faire défiler le carrousel
         
         let currentSlide = 0;
@@ -129,3 +118,7 @@ slides.forEach((slide, index) => {
         }
     }
     </script>
+
+    <?php include 'includes/footer.php'; ?>
+</body>
+</html>

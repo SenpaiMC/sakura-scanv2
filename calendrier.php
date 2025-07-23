@@ -7,18 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-            <div class="contenue"><a href="index.html"><img src="icons\sakura.png" alt="sakura-scan"></a></div>
-            <div id="bar-search">
-                    <form action="" method="post">
-                    <input type="text" placeholder="Rechercher..." name="search">
-                    <button type="submit"><img src="icons\search.png" alt="Rechercher"></button>
-                </form>
-        </div>
-            <div class="contenue"><a href="calendrier.html"><img src="icons\Calendar.png" alt=""></a></div>
-            <div class="contenue"><a href="serie.html"><img src="icons\Serie.png" alt=""></a></div>
-            <div class="contenue"><a href="login.html"><img src="icons\User.png" alt=""></a></div>
-    </header>
+    <?php include 'includes/header.php'; ?>
 
     <div class="barre">
         <div class="contenue"><p>Calendrier</p></div>
@@ -56,6 +45,8 @@
         <div class="calendrier"></div>
         <div class="calendrier"></div>
     </div>
+
+        <?php include 'includes/footer.php'; ?>
     
 </body>
 </html>
